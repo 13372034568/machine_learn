@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 def set_x_y():
     # Size of the points dataset.
-    m = 50
+    m = 100
 
     # Points x-coordinate and dummy value (x0, x1).
     x0 = np.ones((m, 1))
@@ -26,7 +26,7 @@ def set_x_y():
     y = []
     for xi in x:
         yi = 0.7 * xi + 2.4
-        yi += (random.randint(1, 100) - 50) / 20
+        yi += (random.randint(1, 100) - 50) / 10
         y.append(yi)
     y = np.array(y).reshape(m, 1)
 
@@ -75,7 +75,7 @@ if __name__ == '__main__':
     m = np.shape(X)[0]
 
     # The Learning Rate alpha.
-    alpha = 2e-3
+    alpha = 2e-4
 
     optimal, try_index = gradient_descent(X, y, alpha)
     print(try_index)

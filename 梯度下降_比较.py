@@ -12,6 +12,7 @@ def g(x):
 
 def build_2D_func():
     xi = np.linspace(-200, 200, 1000)
+    print(xi)
     yi = np.linspace(-100, 100, 1000)
     X, Y = np.meshgrid(xi, yi)
     Z = X * X + 50 * Y * Y
@@ -23,6 +24,7 @@ def contour(X, Y, Z, arr=None):
     plt.figure(figsize=(12, 8))
     # plt.contourf(X, Y, Z, 100, cmap=plt.cm.hot)
     plt.contour(X, Y, Z, colors='black')
+    print(np.shape(X), np.shape(Y), np.shape(Z))
     plt.plot(0, 0, marker='*', markersize=12)
     if arr is not None:
         arr = np.array(arr)
